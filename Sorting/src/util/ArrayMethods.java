@@ -13,7 +13,7 @@
 package util;
 import java.util.Scanner;
 
-public class ArrayMethods {
+public class ArrayMethods  {
 	
 	Scanner sc = new Scanner(System.in);
 
@@ -29,6 +29,7 @@ public class ArrayMethods {
 
 	/**
 	 * Asks user to enter words Stores those words in wordsArray
+	 * Returns the word array
 	 */
 	public String[] storeWordsInArray(int arraySize) {
 		System.out.println("Enter the words :");
@@ -38,13 +39,29 @@ public class ArrayMethods {
 		}
 		return wordsArray;
 	}
+	
+	/**
+	 * Takes user input of integers and stores them in array
+	 * Returns the array
+	 * @param arraySize
+	 * @return Integer array
+	 */
+	public Integer[] storeIntsInArray(Integer arraySize) {
+		System.out.println("Enter the numbers :");
+		Integer intsArray[] = new Integer[arraySize];
+		for (int i = 0; i < arraySize; i++) {
+			intsArray[i] = sc.nextInt();
+		}
+		return intsArray;
+	}
 
 	/**
+	 * Takes arraySize and generic array as arguments
 	 * Prints the words in wordsArray on console
 	 */
-	public void printArray(int arraySize,String wordsArray[]) {
+	public <E> void printArray(int arraySize,E[] anyArray) {
 		for (int i = 0; i < arraySize; i++)
-			System.out.println(wordsArray[i]);
+			System.out.println(anyArray[i]);
 	}
 
 }
