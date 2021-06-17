@@ -73,12 +73,9 @@ public class AnagramDetector {
 		sort(word1);
 		sort(word2);
 		int check = checkAnagram(word1, word2);
-		if (check == 0) {
-			System.out.println("Not Anagram");
-		} else {
-			System.out.println("Anagram");
-		}
-
+		String checkStatement = (check==0)?"Not anagram":"Anagram";
+		System.out.println(checkStatement);
+	
 	}
 
 }
