@@ -22,7 +22,7 @@ import java.util.Scanner;
 
 public class FileOperations {
 	// Creating object of LinkedList
-	public List<String> list = new LinkedList<>();
+	private List<String> list = new LinkedList<>();
 
 	/**
 	 * Purpose : To read file from file path and store the words in a linked list
@@ -30,7 +30,7 @@ public class FileOperations {
 	 * @return A linked list "list" which contains all the words from file
 	 * @throws FileNotFoundException
 	 */
-	public List<String> readFile() throws FileNotFoundException {
+	private List<String> readFile() throws FileNotFoundException {
 		File file = new File("C:\\Users\\Hrishikesh\\Desktop\\Java_assignments\\Day16&17\\UnorderedList\\testFile.txt");
 		Scanner scan = new Scanner(file);
 		while (scan.hasNextLine()) {
@@ -45,7 +45,7 @@ public class FileOperations {
 	 * 
 	 * @return the word user wants to search
 	 */
-	public String takeUserInput() {
+	private String takeUserInput() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter word to search in file ");
 		return sc.next();
@@ -55,7 +55,7 @@ public class FileOperations {
 	 * @param key (The word user entered) Checks if a word is present in linked
 	 *            list. If present removes it, if not adds it.
 	 */
-	public void editLinkedList(String key) {
+	private void editLinkedList(String key) {
 		if (list.contains(key)) {
 			list.remove(key);
 		} else {
@@ -66,7 +66,7 @@ public class FileOperations {
 	/**
 	 * Prints the linked list on console
 	 */
-	public void printList() {
+	private void printList() {
 		System.out.println(list);
 	}
 
@@ -75,7 +75,7 @@ public class FileOperations {
 	 * over list and writes into the file line by line.
 	 * @throws IOException
 	 */
-	public void writeFile() throws IOException {
+	private void writeFile() throws IOException {
 		FileWriter writer = new FileWriter("C:\\Users\\Hrishikesh\\Desktop\\Java_assignments\\Day16&17\\UnorderedList\\targetFile.txt");
 		Iterator<String> itr = list.iterator();
 		int i = 0;
